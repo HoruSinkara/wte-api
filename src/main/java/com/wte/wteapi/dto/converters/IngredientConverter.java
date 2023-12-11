@@ -20,4 +20,17 @@ public class IngredientConverter {
         }
         return ingredientDTOList;
     }
+    public static Ingredient convertToEntity(IngredientDTO ingredientDTO){
+        return Ingredient.builder()
+                .id(ingredientDTO.getId())
+                .name(ingredientDTO.getName())
+                .build();
+    }
+    public static List<Ingredient> convertToListEntity(List<IngredientDTO> ingredientDTOList){
+        List<Ingredient> ingredientList = new ArrayList<>();
+        for (IngredientDTO ingredientDTO: ingredientDTOList){
+            ingredientList.add(convertToEntity(ingredientDTO));
+        }
+        return ingredientList;
+    }
 }

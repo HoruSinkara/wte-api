@@ -1,8 +1,11 @@
 package com.wte.wteapi.dto.converters;
 
 import com.wte.wteapi.dto.RecipeGetDTO;
+import com.wte.wteapi.dto.RecipePostDTO;
 import com.wte.wteapi.entity.Recipe;
+import com.wte.wteapi.entity.RecipesIngredients;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,5 +28,15 @@ public class RecipeConverter {
             recipeGetDTOList.add(convertToDTO(recipe));
         }
         return recipeGetDTOList;
+    }
+    public static Recipe convertToEntity(RecipePostDTO recipePostDTO){
+        return Recipe.builder()
+                .id(recipePostDTO.getId())
+                .title(recipePostDTO.getTitle())
+                .instructions(recipePostDTO.getInstructions())
+                .cookingTime(recipePostDTO.getCookingTime())
+                .createdAt(LocalDateTime.now())
+                .difficulty(recipePostDTO.getDifficulty())
+                .build();
     }
 }
