@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,6 +26,9 @@ public class Recipe {
     @Column(columnDefinition = "TEXT")
     private String instructions;
     @Column(name = "cooking_time")
-    private LocalDate cookingTime;
+    private Integer cookingTime;
     private String difficulty;
+
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<RecipesIngredients> ingredients;
 }
