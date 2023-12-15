@@ -15,4 +15,7 @@ public class RecipesIngredientsService {
     public List<RecipesIngredients> addAll(List<RecipesIngredients> recipesIngredientsList){
         return recipesIngredientsRepository.saveAll(recipesIngredientsList);
     }
+    public List<RecipesIngredients> getListByIngredientId(Integer ingredientId){
+        return recipesIngredientsRepository.findAllByIngredientId(ingredientId);
+    }
 }
