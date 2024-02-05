@@ -16,6 +16,8 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class AccountController {
     private final AccountService accountService;
+
+
     @GetMapping
     public ResponseEntity<List<AccountDTO>>  getAccount(){
         return new ResponseEntity<>(AccountConverter.convertToListDTO(accountService.getAccount()), HttpStatus.OK);
