@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/ingredient")
-@CrossOrigin(origins = "*")
 public class IngredientController {
     private final IngredientService ingredientService;
     @GetMapping
