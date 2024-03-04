@@ -28,7 +28,8 @@ public class Recipe {
     @Column(name = "cooking_time")
     private Integer cookingTime;
     private String difficulty;
-
+    @Lob
+    private byte[] image;
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<RecipesIngredients> ingredients;
 }

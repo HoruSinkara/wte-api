@@ -19,6 +19,7 @@ public class RecipeConverter {
                 .cookingTime(recipe.getCookingTime())
                 .difficulty(recipe.getDifficulty())
                 .createdAt(recipe.getCreatedAt())
+                .image(recipe.getImage())
                 .build();
     }
 
@@ -37,6 +38,7 @@ public class RecipeConverter {
                 .cookingTime(recipePostDTO.getCookingTime())
                 .createdAt(LocalDateTime.now())
                 .difficulty(recipePostDTO.getDifficulty())
+                .image(recipePostDTO.getImage())
                 .build();
     }
 }

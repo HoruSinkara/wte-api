@@ -19,5 +19,6 @@ public class RecipePostDTO {
     private String instructions;
     private Integer cookingTime;
     private String difficulty;
+    private byte[] image;
     private List<RecipesIngredientsDTO> ingredients;
 }
