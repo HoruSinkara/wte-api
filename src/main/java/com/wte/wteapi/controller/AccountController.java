@@ -29,4 +29,8 @@ public class AccountController {
     public ResponseEntity<AccountDTO> createAccount(@RequestBody AccountDTO accountDTO){
         return new ResponseEntity<>(AccountConverter.convertToDTO(accountService.createAccount(AccountConverter.convertToEntity(accountDTO))), HttpStatus.CREATED);
     }
+    @GetMapping("/ac")
+    public ResponseEntity<HttpStatus> fff(){
+        return new ResponseEntity<>(HttpStatus.CONTINUE);
+    }
 }
