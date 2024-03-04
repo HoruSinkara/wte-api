@@ -22,6 +22,8 @@ public class Account {
     private LocalDateTime createdAt;
     @Column(name = "is_admin")
     private boolean isAdmin;
+    @Lob
+    private byte[] image;
 
 
 }

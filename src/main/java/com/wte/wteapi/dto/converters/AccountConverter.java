@@ -15,6 +15,7 @@ public class AccountConverter {
                 .phone(account.getPhone())
                 .createdAt(account.getCreatedAt())
                 .isAdmin(account.isAdmin())
+                .image(account.getImage())
                 .build();
     }
     public static List<AccountDTO> convertToListDTO(List<Account> accountList){
@@ -32,6 +33,7 @@ public class AccountConverter {
                 .password(accountDTO.getPassword())
                 .createdAt(accountDTO.getCreatedAt())
                 .isAdmin(accountDTO.isAdmin())
+                .image(accountDTO.getImage()!=null? accountDTO.getImage() : null)
                 .build();
     }
 }
