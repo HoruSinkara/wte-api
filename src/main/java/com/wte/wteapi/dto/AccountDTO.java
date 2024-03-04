@@ -20,4 +20,5 @@ public class AccountDTO {
     private LocalDateTime createdAt;
     @Column(name = "isAdmin")
     private boolean isAdmin;
+    private byte[] image;
 }
